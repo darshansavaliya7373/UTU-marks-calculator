@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTU Marks Calculator | Effortless Pass Tracker</title>
+    <meta name="description"
+        content="Calculate your UTU passing marks easily. A simple community tool to help students track and stay ahead of the daily chaos.">
+    <meta name="keywords" content="UTU, Marks Calculator, Student Tracker, daily chaos calculator">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @media (min-width: 1400px) {
+            .skyscraper-ad {
+                position: fixed;
+                top: 100px;
+                width: 160px;
+                height: 600px;
+                background: rgba(255, 255, 255, 0.4);
+                border: 1px dashed #e2e8f0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+
+            .skyscraper-left {
+                left: 40px;
+            }
+
+            .skyscraper-right {
+                right: 40px;
+            }
+        }
+
+        @media (max-width: 1399px) {
+            .skyscraper-ad {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="p-0 m-0 bg-slate-50 text-slate-900 overflow-x-hidden min-h-screen flex flex-col">
+    <!-- Mesh Gradient Background -->
+    <div class="mesh-circle c1"></div>
+    <div class="mesh-circle c2"></div>
+
+    <!-- Skyscraper Ads (Desktop Fixed) -->
+    <div class="skyscraper-ad skyscraper-left ad-container hidden">
+        <div class="ad-real-unit hidden flex flex-col items-center justify-center h-full w-full bg-transparent">
+            <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-"
+                data-ad-slot=""></ins>
+        </div>
+    </div>
+    <div class="skyscraper-ad skyscraper-right ad-container hidden">
+        <div class="ad-real-unit hidden flex flex-col items-center justify-center h-full w-full bg-transparent">
+            <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-"
+                data-ad-slot=""></ins>
+        </div>
+    </div>
+
+    <!-- Navigation (Wide & Centered) -->
+    <nav
+        class="glass mx-4 mt-8 lg:mx-auto lg:w-full lg:max-w-5xl py-4 px-10 flex items-center justify-between z-50 shrink-0">
+        <div class="flex items-center gap-3">
+            <div class="bg-black p-2.5 rounded-2xl shadow-xl">
+                <i data-lucide="calculator" class="text-white w-6 h-6"></i>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-2xl font-black tracking-tighter text-black leading-none">
+                    UTU Calculator
+                </span>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">Uplift Talent
+                    Universe</span>
+            </div>
+        </div>
+        <div class="hidden md:flex gap-12 text-sm font-black text-gray-400">
+            <a href="#" class="hover:text-black transition-colors">Calculator</a>
+            <a href="privacy.html" class="hover:text-black transition-colors">Privacy</a>
+            <a href="terms.html" class="hover:text-black transition-colors">Terms</a>
+        </div>
+        <div>
+            <span
+                class="text-[10px] bg-black text-white px-3 py-1.5 rounded-lg font-black uppercase tracking-[0.2em]">v2.1
+                SEO</span>
+        </div>
+    </nav>
+
+    <!-- Center Hero Dashboard -->
+    <main class="flex-grow container mx-auto px-4 py-12 lg:max-w-5xl xl:max-w-6xl w-full flex flex-col gap-10">
+
+        <!-- Massive Introduction -->
+        <header class="text-center mb-6">
+            <h1 class="text-6xl lg:text-7xl font-black tracking-tightest mb-4">
+                UTU. <span class="text-slate-300">Marks.</span> <span
+                    class="underline decoration-indigo-500 decoration-8 underline-offset-8">Calculator.</span>
+            </h1>
+        </header>
+
+        <!-- Centered Ad Slot (Top) -->
+        <div
+            class="border-slate-100 mx-auto w-full max-w-4xl relative overflow-hidden h-[100px] flex items-center justify-center ad-container hidden bg-transparent">
+            <div class="shrink-0 relative rounded-2xl overflow-hidden w-full hidden ad-real-unit bg-transparent">
+                <!-- START GOOGLE ADSENSE -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-" data-ad-slot=""
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <!-- Massive Input Container -->
+        <div class="glass p-10 bg-white/80 border-slate-100 shadow-2xl relative">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-end">
+                <div class="md:col-span-1 space-y-2">
+                    <label class="text-xs uppercase tracking-[0.3em] font-black text-slate-500 ml-1">Subject
+                        Name</label>
+                    <input type="text" id="subjectInput" placeholder="e.g. Mathematics"
+                        class="w-full glass-input p-5 rounded-2xl text-xl font-black border-2 border-slate-100 focus:border-black">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs uppercase tracking-[0.3em] font-black text-slate-500 ml-1">IA 1 (Max
+                        30)</label>
+                    <input type="number" id="ia1Input" placeholder="0"
+                        class="w-full glass-input p-5 rounded-2xl text-xl font-black text-center border-2 border-slate-100">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs uppercase tracking-[0.3em] font-black text-slate-500 ml-1">IA 2 (Max
+                        30)</label>
+                    <input type="number" id="ia2Input" placeholder="0"
+                        class="w-full glass-input p-5 rounded-2xl text-xl font-black text-center border-2 border-slate-100">
+                </div>
+                <div>
+                    <button id="addBtn" onclick="handleCalculate()"
+                        class="w-full btn-black py-5 px-10 rounded-2xl font-black text-xl flex items-center justify-center gap-4 shadow-2xl bg-indigo-600 hover:bg-black transition-all">
+                        <i data-lucide="plus-circle" class="w-7 h-7"></i>
+                        <span>Add Subject</span>
+                    </button>
+                </div>
+            </div>
+            <div id="errorMsg" class="text-red-500 text-sm font-black mt-6 hidden flex items-center gap-3">
+                <i data-lucide="zap" class="w-5 h-5"></i>
+                <span id="errorText"></span>
+            </div>
+        </div>
+
+
+        <!-- Hero Results Area -->
+        <div id="resultsSection" class="hidden fade-in">
+            <div class="glass rounded-[2.5rem] bg-white/40 border-slate-100 overflow-hidden shadow-2xl">
+                <table class="w-full text-left">
+                    <thead class="bg-white/80 border-b-2 border-slate-100">
+                        <tr>
+                            <th class="p-10 text-sm font-black text-slate-400 uppercase tracking-widest">Subject</th>
+                            <th class="p-10 text-sm font-black text-slate-400 text-center uppercase tracking-widest">IA
+                                Avg</th>
+                            <th class="p-10 text-sm font-black text-slate-900 text-center uppercase tracking-[0.3em]">
+                                Goal Score</th>
+                            <th class="p-10 text-sm font-black text-slate-400 text-right uppercase tracking-widest">
+                                Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subjectsTableBody">
+                        <!-- Data rows injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Large Empty State -->
+        <div id="emptyState" class="glass p-24 text-center bg-white shadow-2xl border-dashed border-2 border-slate-100">
+            <div class="bg-slate-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-10 shadow-inner">
+                <i data-lucide="layers" class="text-slate-200 w-12 h-12"></i>
+            </div>
+            <p class="text-xl text-slate-400 font-medium">Please enter your subject data to populate the dashboard.</p>
+        </div>
+
+        <!-- Bottom Ad Slot -->
+        <div
+            class="border-slate-100 mx-auto w-full max-w-4xl relative overflow-hidden h-[100px] flex items-center justify-center mt-12 ad-container hidden bg-transparent">
+            <div class="ad-real-unit hidden flex flex-col items-center justify-center h-full w-full bg-transparent">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-" data-ad-slot=""
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </main>
+
+    <!-- Expanded Footer -->
+    <footer class="mt-20 py-12 bg-white border-t-2 border-slate-100 px-12 md:px-24">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="flex flex-col gap-2 scale-110 origin-left">
+                <span class="text-xs font-black uppercase tracking-[0.4em] text-slate-400">Founder & Lead Dev</span>
+                <h2 class="text-4xl font-black text-black">DARSHAN</h2>
+                <div class="h-1 w-12 bg-indigo-500 mt-2"></div>
+            </div>
+
+            <div class="text-center md:text-right space-y-4">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Global Ecosystem</p>
+                <p class="text-2xl font-black text-slate-900 border-b-4 border-black inline-block">Uplift Talent
+                    Universe</p>
+                <div
+                    class="flex justify-center md:justify-end gap-10 text-sm font-black uppercase tracking-widest text-slate-400">
+                    <a href="privacy.html" class="hover:text-indigo-500 transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-indigo-500 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-indigo-500 transition-colors">UTU Support</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 pt-8 border-t border-slate-50 text-center">
+            <p class="text-[10px] font-black uppercase tracking-[0.5em] text-slate-200">Uplift Talent Universe Tool v2.3
+                ©
+                2026</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Production: Show Ad Container ONLY on Successful Load
+        function initializeAdMonitor() {
+            const containers = document.querySelectorAll('.ad-container');
+
+            containers.forEach(container => {
+                const adUnit = container.querySelector('ins.adsbygoogle');
+                if (!adUnit) return;
+
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'data-ad-status') {
+                            const status = adUnit.getAttribute('data-ad-status');
+                            if (status === 'filled') {
+                                container.classList.remove('hidden');
+                                container.classList.add('fade-in');
+                            } else if (status === 'unfilled') {
+                                container.style.display = 'none'; // Ensure it stays hidden
+                            }
+                        }
+                    });
+                });
+
+                observer.observe(adUnit, { attributes: true });
+
+                // Fallback: Check height after long delay if status attribute isn't supported
+                setTimeout(() => {
+                    if (adUnit.offsetHeight > 0) {
+                        container.classList.remove('hidden');
+                        container.classList.add('fade-in');
+                    }
+                }, 5000);
+            });
+        }
+
+        // Run monitor and simulation
+        window.addEventListener('load', () => {
+            initializeAdMonitor();
+
+            // Simulation for local testing
+            setTimeout(() => {
+                // If you want to simulate success locally, uncomment the lines below:
+                /*
+                document.querySelectorAll('.ad-container').forEach(c => {
+                    c.classList.remove('hidden');
+                    c.classList.add('fade-in');
+                });
+                */
+                console.log('UTU Ad Monitor Active');
+            }, 1000);
+        });
+
+        let subjectsData = [];
+        let editIndex = -1;
+
+        lucide.createIcons();
+
+        function showError(msg) {
+            const errorMsg = document.getElementById('errorMsg');
+            const errorText = document.getElementById('errorText');
+            if (msg) {
+                errorText.innerText = msg;
+                errorMsg.classList.remove('hidden');
+            } else {
+                errorMsg.classList.add('hidden');
+            }
+        }
+
+        function calculatePassingMarks(ia1, ia2) {
+            const iaAverage = (ia1 + ia2) / 2;
+            const res = 40 - ((iaAverage * 40) / 30);
+            return Math.max(0, res);
+        }
+
+        function handleCalculate() {
+            const subjectInput = document.getElementById('subjectInput');
+            const ia1Input = document.getElementById('ia1Input');
+            const ia2Input = document.getElementById('ia2Input');
+            const addBtn = document.getElementById('addBtn');
+
+            const subject = subjectInput.value.trim();
+            const ia1 = parseFloat(ia1Input.value);
+            const ia2 = parseFloat(ia2Input.value);
+
+            if (!subject) { showError('SUBJECT NAME REQUIRED'); return; }
+            if (isNaN(ia1) || isNaN(ia2) || ia1 < 0 || ia2 < 0 || ia1 > 30 || ia2 > 30) {
+                showError('INVALID IA DATA (EXPECTED 0-30)'); return;
+            }
+
+            showError('');
+            const passingMarks = calculatePassingMarks(ia1, ia2);
+
+            if (editIndex !== -1) {
+                subjectsData[editIndex] = { subject, ia1, ia2, passingMarks };
+                editIndex = -1;
+                addBtn.innerHTML = '<i data-lucide="plus-circle" class="w-7 h-7"></i><span>Add Subject</span>';
+                addBtn.classList.replace('bg-black', 'bg-indigo-600');
+            } else {
+                subjectsData.push({ subject, ia1, ia2, passingMarks });
+            }
+
+            subjectInput.value = ''; ia1Input.value = ''; ia2Input.value = '';
+            renderTable();
+            lucide.createIcons();
+        }
+
+        function handleEdit(index) {
+            const item = subjectsData[index];
+            document.getElementById('subjectInput').value = item.subject;
+            document.getElementById('ia1Input').value = item.ia1;
+            document.getElementById('ia2Input').value = item.ia2;
+            editIndex = index;
+            const addBtn = document.getElementById('addBtn');
+            addBtn.innerHTML = '<i data-lucide="save" class="w-7 h-7"></i><span>Save Data</span>';
+            addBtn.classList.replace('bg-indigo-600', 'bg-black');
+            lucide.createIcons();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleDelete(index) {
+            subjectsData.splice(index, 1);
+            renderTable();
+        }
+
+        function renderTable() {
+            const tableBody = document.getElementById('subjectsTableBody');
+            const resultsSection = document.getElementById('resultsSection');
+            const emptyState = document.getElementById('emptyState');
+
+            if (subjectsData.length === 0) {
+                resultsSection.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            resultsSection.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            tableBody.innerHTML = subjectsData.map((data, index) => `
+                <tr class="border-b-4 border-slate-50 bg-white hover:bg-slate-50 transition-all group">
+                    <td class="p-10 font-black text-slate-950 text-2xl tracking-tighter">${data.subject}</td>
+                    <td class="p-10 text-center text-slate-400 font-bold text-2xl">${((data.ia1 + data.ia2) / 2).toFixed(1)}</td>
+                    <td class="p-10 text-center">
+                        <span class="bg-black text-white px-8 py-4 rounded-[1.5rem] text-2xl font-black shadow-2xl">
+                            ${data.passingMarks.toFixed(2)}
+                        </span>
+                    </td>
+                    <td class="p-10 text-right">
+                        <div class="flex justify-end gap-6">
+                            <button onclick="handleEdit(${index})" class="p-4 hover:bg-slate-100 rounded-2xl text-slate-400 hover:text-black transition-all">
+                                <i data-lucide="settings" class="w-8 h-8"></i>
+                            </button>
+                            <button onclick="handleDelete(${index})" class="p-4 hover:bg-red-50 rounded-2xl text-slate-400 hover:text-red-500 transition-all">
+                                <i data-lucide="trash-2" class="w-8 h-8"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+
+            lucide.createIcons();
+        }
+    </script>
+</body>
+
+</html>

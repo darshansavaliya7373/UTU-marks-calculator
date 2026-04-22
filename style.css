@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #f8fafc;
+    /* Clean white background with very subtle light-mode mesh */
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, transparent 50%), 
+        radial-gradient(at 50% 0%, hsla(225,39%,30%,0.03) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, hsla(339,49%,30%,0.03) 0, transparent 50%);
+    min-height: 100vh;
+    color: #0f172a;
+    overflow-x: hidden;
+    font-size: 1.1rem; /* Scaled up base font size */
+}
+
+/* Mesh Circle (Even more subtle) */
+.mesh-circle {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.1;
+    animation: floating 30s infinite alternate ease-in-out;
+}
+
+.c1 { width: 700px; height: 700px; background: #6366f1; top: -15%; left: -10%; }
+.c2 { width: 600px; height: 600px; background: #c084fc; bottom: -5%; right: -5%; animation-delay: -5s; }
+
+@keyframes floating {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 30px); }
+}
+
+/* Glassmorphism (Larger Radius for Readability) */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 1.5rem;
+}
+
+.glass-input {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.05rem; /* Larger inputs */
+}
+
+.glass-input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 4px rgba(0, 0, 10, 0.05);
+    outline: none;
+}
+
+/* Ultra-Premium Black Button (Larger) */
+.btn-black {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    border-radius: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-black:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-black:active {
+    transform: translateY(0) scale(1);
+}
+
+/* Table Readability */
+td, th {
+    padding: 1.25rem !important; /* Larger table cells */
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom Scrollbar (Wider for targetability) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ced4da;
+    border-radius: 20px;
+    border: 3px solid #f8fafc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #adb5bd;
+}
