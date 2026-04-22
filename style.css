@@ -17,7 +17,7 @@ body {
     min-height: 100vh;
     color: #0f172a;
     overflow-x: hidden;
-    font-size: 1.1rem; /* Scaled up base font size */
+    font-size: 1rem;
 }
 
 /* Mesh Circle (Even more subtle) */
@@ -53,7 +53,7 @@ body {
     border: 1px solid #e2e8f0;
     color: #0f172a;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 1.05rem; /* Larger inputs */
+    font-size: 1rem;
 }
 
 .glass-input:focus {
@@ -66,9 +66,9 @@ body {
 .btn-black {
     background-color: #000000;
     color: #ffffff;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    border-radius: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -84,7 +84,7 @@ body {
 
 /* Table Readability */
 td, th {
-    padding: 1.25rem !important; /* Larger table cells */
+    padding: 0.75rem !important;
 }
 
 /* Animations */
